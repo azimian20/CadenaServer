@@ -14,7 +14,6 @@ import javax.validation.constraints.Size;
 @Table(name = "T_USER")
 public class User extends Person {
 
-	
 	public String getUsername() {
 		return username;
 	}
@@ -23,7 +22,7 @@ public class User extends Person {
 		this.username = username;
 	}
 
-	@Column(name = "C_USERNAME")
+	@Column(name = "C_USERNAME", unique = true)
 	@Size(max = 255, min = 3, message = "{user.name.invalid}")
 	private String username;
 
@@ -59,8 +58,5 @@ public class User extends Person {
 	public void setAuthorities(Set<Authorities> authorities) {
 		this.authorities = authorities;
 	}
-	
-	
-
 
 }

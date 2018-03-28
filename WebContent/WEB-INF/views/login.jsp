@@ -11,22 +11,15 @@
 	<form:form action="loginAction" method="POST">
     <table>
     
-      
-      <c:if test="${param.error != null}">
-		<tr>
-        <td>Error message:</td>
-        <td>.${param.error}.</td>
-      </tr>
-	</c:if>
 	
 	<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
 		<tr>
-        <td>Error message II:</td>
+        <td></td>
         <td>${SPRING_SECURITY_LAST_EXCEPTION.message}</td>
       </tr>
 	</c:if>
 	
-	<c:if test="${param.logout != null}">
+	<c:if test="${not empty param.logout}">
 		<tr>
         <td></td>
         <td>You have been logged out.</td>

@@ -42,6 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/login**").permitAll().and().formLogin().loginPage("/login")
 				.loginProcessingUrl("/loginAction").permitAll().and().logout().logoutSuccessUrl("/login").permitAll()
 				.and().csrf().disable();
+		http.logout().logoutUrl("/logoutAction").logoutSuccessUrl("/login").invalidateHttpSession(true);
 		System.out.println("____ WebSecurityConfig_45");
 	}
 
